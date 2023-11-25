@@ -13,39 +13,29 @@
 <?php 
 	include 'utils/navbar.html'; 
 	include './utils/database.php';
-	if (isset($_POST['tenhs']) && isset($_POST['tensach']) && isset($_POST['ngaytra']) && isset($_POST['lophs'])) {
-		$tenhs = $_POST['tenhs'];
-		$lophs = $_POST['lophs'];
+	if (isset($_POST['tensach']) && isset($_POST['tacgia'])){
 		$tensach = $_POST['tensach'];
-		$ngaytra = date("Y-m-d", strtotime($_POST['ngaytra']));
-		$sql = "INSERT INTO `quanli`(`tenhs`, `lophs`, `tensach`, `ngaymuon`,`ngaytra`) VALUES ('".$tenhs."','".$lophs."','".$tensach."', '".date('Y-m-d')."','".$ngaytra."')";
-		$result = $con->query($sql);
-		if ($result) {
-			echo "<script>Swal.fire({
-				  title: \"Thành công!\",
-				  text: \"Nhắc $tenhs nhớ trả sách:))\",
-				  icon: \"success\"
-				});</script>";
-						}
-					}
-		$_POST = array();
+		$tacgia = $_POST['tacgia'];
+		
+	}
+		
  ?>
 <body>
 	<div class="container mt-4 card">
-		<form class="m-4">
+		<form class="m-4" method="post" action="addbook.php">
 		  <div class="form-group">
-		    <label for="tenhs">Tên sách</label>
-		    <input name="tenhs" class="form-control" placeholder="Tên sách" required>
+		    <label for="tensach">Tên sách</label>
+		    <input name="tensach" class="form-control" placeholder="Tên sách" required>
 		  </div>
 		  <br>
 
 		  <div class="form-group">
-		    <label for="lophs">Tác giả</label>
-		    <input name="lophs" class="form-control" placeholder="Tác giả" required>
+		    <label for="tacgia">Tác giả</label>
+		    <input name="tacgia" class="form-control" placeholder="Tác giả" required>
 		  </div>
 			<br>
 		  
-		  <h2 onclick="loi()" class="btn btn-success">Thêm sách</h2>
+		  <input type="submit" class="btn btn-success" value="Thêm sách">
 		</form>
 	</div>
 </body>
