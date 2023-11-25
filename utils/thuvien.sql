@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2023 at 04:14 PM
+-- Generation Time: Nov 25, 2023 at 07:08 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Database: `thuvien`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quanli`
+--
+
+CREATE TABLE `quanli` (
+  `ID` int(255) NOT NULL,
+  `tenhs` text NOT NULL,
+  `lophs` varchar(255) NOT NULL,
+  `tensach` text NOT NULL,
+  `ngaymuon` date NOT NULL,
+  `ngaytra` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -63,6 +78,12 @@ INSERT INTO `sach` (`ID`, `bookname`) VALUES
 --
 
 --
+-- Indexes for table `quanli`
+--
+ALTER TABLE `quanli`
+  ADD PRIMARY KEY (`ID`);
+
+--
 -- Indexes for table `sach`
 --
 ALTER TABLE `sach`
@@ -71,6 +92,12 @@ ALTER TABLE `sach`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `quanli`
+--
+ALTER TABLE `quanli`
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `sach`
